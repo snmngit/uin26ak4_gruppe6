@@ -7,22 +7,35 @@ export default {
       name: 'nummer',
       title: 'Nummer',
       type: 'number',
-      validation: (Rule) => Rule.required().min(1),
     },
     {
       name: 'tittel',
       title: 'Tittel',
       type: 'string',
-      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: 'slug',
+      title: 'Slug',
+      type: 'slug',
+      options: {
+        source: 'tittel',
+        maxLength: 96,
+        slugify: (input) =>
+          input
+            .toLowerCase()
+            .replace(/\s+/g, '-')
+            .replace(/[^a-z0-9-]/g, '')
+            .slice(0, 96),
+      },
     },
     {
       name: 'beskrivelse',
       title: 'Beskrivelse',
       type: 'text',
       rows: 3,
-      validation: (Rule) => Rule.required(),
     },
   ],
+
   orderings: [
     {
       title: 'Nummer (stigende)',
@@ -30,11 +43,12 @@ export default {
       by: [{ field: 'nummer', direction: 'asc' }],
     },
   ],
+
   preview: {
     select: { title: 'tittel', subtitle: 'nummer' },
     prepare({ title, subtitle }) {
       return {
-        title: title,
+        title,
         subtitle: `Arbeidskrav ${subtitle}`,
       }
     },
