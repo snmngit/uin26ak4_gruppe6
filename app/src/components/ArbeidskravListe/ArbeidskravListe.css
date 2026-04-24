@@ -1,0 +1,29 @@
+.krav-liste {
+  list-style: none;
+  display: grid;
+  gap: 1rem;
+}
+
+.krav-kort {
+  background: white;
+  padding: 1.5rem;
+  border-left: 4px solid #16213e;
+  border-radius: 4px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+
+.krav-kort h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #1a1a2e;
+}
+
+.krav-nummer {
+  color: #c2185b;
+  font-family: 'Courier New', monospace;
+  margin-right: 0.5rem;
+}
+
+.krav-kort p {
+  color: #555;
+}

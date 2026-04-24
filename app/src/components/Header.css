@@ -1,0 +1,18 @@
+.site-header {
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.site-header h1 {
+  font-size: 3rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.site-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  margin-top: 0.5rem;
+}
